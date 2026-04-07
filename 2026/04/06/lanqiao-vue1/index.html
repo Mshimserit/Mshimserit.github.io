@@ -1,0 +1,859 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vue3题目 | MShBlog</title><meta name="author" content="Msh"><meta name="copyright" content="Msh"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="vue题目集。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue3题目">
+<meta property="og:url" content="https://msh-18751628429.github.io/2026/04/06/lanqiao-vue1/index.html">
+<meta property="og:site_name" content="MShBlog">
+<meta property="og:description" content="vue题目集。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://msh-18751628429.github.io/images/cover.jpg">
+<meta property="article:published_time" content="2026-04-06T07:26:46.000Z">
+<meta property="article:modified_time" content="2026-04-06T12:54:42.072Z">
+<meta property="article:author" content="Msh">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="vue3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://msh-18751628429.github.io/images/cover.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "vue3题目",
+  "url": "https://msh-18751628429.github.io/2026/04/06/lanqiao-vue1/",
+  "image": "https://msh-18751628429.github.io/images/cover.jpg",
+  "datePublished": "2026-04-06T07:26:46.000Z",
+  "dateModified": "2026-04-06T12:54:42.072Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Msh",
+      "url": "https://msh-18751628429.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://msh-18751628429.github.io/2026/04/06/lanqiao-vue1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue3题目',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><style>
+  /* 黑暗模式代码块全局修复 */
+[data-theme="dark"] {
+  --highlight-bg: #1e1e1e;
+  --highlight-border: #2d2d2d;
+  --highlight-color: #d4d4d4;
+}
+
+[data-theme="dark"] .highlight,
+[data-theme="dark"] pre,
+[data-theme="dark"] code.hljs {
+  background: var(--highlight-bg) !important;
+  border-color: var(--highlight-border) !important;
+  color: var(--highlight-color) !important;
+}
+
+/* 行号背景 */
+[data-theme="dark"] .highlight .gutter {
+  background-color: #252526 !important;
+  border-right: 1px solid #2d2d2d !important;
+}
+
+/* 代码块标题栏 */
+[data-theme="dark"] .highlight figcaption {
+  background-color: #252526 !important;
+  border-bottom: 1px solid #2d2d2d !important;
+  color: #ccc !important;
+}
+  
+  #body-wrap .post{
+   background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(3px);
+    
+    -webkit-backdrop-filter: blur(2px) saturate(180%);
+   
+  }
+  #card-toc .card-widget{
+
+  background:rgba(255,255,255,0.4)!important;
+  }
+  /* TOC 项 */
+  #aside-content #card-toc .toc-item .toc-link {
+    color:#504e4e!important;
+  }
+  
+  /* TOC 激活项 */
+  #aside-content #card-toc .toc-item.active .toc-link {
+    color:#121212 !important;
+    
+    background:rgba(255,255,255,0.5)!important;
+ 
+  }
+  
+  /* TOC 悬停 */
+  #aside-content #card-toc .toc-item .toc-link:hover {
+    color:#121212 !important;
+   background:rgba(255,255,255,0.5)!important;
+ 
+  }
+  
+  #post{
+   background:rgba(255,255,255,0.45)!important;
+ 
+  }
+  #recent-posts .recent-post-item > .recent-post-info > .article-title {
+    color: #121212!important;}
+  #recent-posts .recent-post-item > .recent-post-info > .article-meta-wrap{
+    color: #121212!important;}
+  #recent-posts .recent-post-item > .recent-post-info > .post-meta-date {
+    color: #121212!important;}
+  #recent-posts .recent-post-item > .recent-post-info > .content {
+    color: #121212!important;}
+  /* 卡片背景 */
+  #recent-posts .recent-post-item {
+  border:1px solid #bbbab175;
+  background: rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(1px) !important;}
+  #content-inner {
+  border:1px solid #bbbab175;
+    background-color: rgba(255,255,255,0.5) !important;
+  }
+  .container pre{
+  background: rgba(255, 255, 255,0.55) !important;
+  }
+   .card-widget {
+   color:#121212;
+   border:1px solid #bbbab175;
+     background:  rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;}
+  }
+   
+  .site-data .headline{
+  color:#121212!important;
+  }
+  .site-data .headline{
+  color:#121212!important;
+  }
+  #aside-content .aside-list > .aside-list-item .content > .title{
+  color:rgba(56,165,187)!important;}
+  
+  .site-data > a .length-num{color:rgba(56,165,187)!important;}
+
+  #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a span{
+  color:#504e4e!important;}
+
+  .card-recent-post .aside-list .no-cover .title,.card-recent-post .aside-list .no-cover time{
+  color:#121212!important;}
+
+  #aside-content .card-categories ul.card-category-list > .card-category-list-item a span{
+  color:#504e4e!important;}
+  /* 归档页面卡片样式 */
+  #archive{
+  background:rgba(255,255,255,0.3);
+ 
+  color:#504e4e!important;
+  border:1px solid #bbbab175;
+  }
+  #archive .article-sort-item-title{color:#504e4e!important;}
+  
+  
+  /* 分类页面卡片样式 */
+  #page{
+  background: rgba(255,255,255,0.5);
+  border:1px solid #bbbab175;
+  backdrop-filter: blur(5px) !important;
+  color:#504e4e!important;
+  }
+
+  /* 标签页面卡片样式 */
+  #tag{
+  border:1px solid #bbbab175;
+  backdrop-filter: blur(5px) !important;
+  background: rgba(255,255,255,0.5);
+  color:#504e4e!important;
+  }
+  #nav {
+    background: rgba(255, 255, 255, 0.1);
+    font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+    
+  }
+   #footer {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(2px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    color: #333;
+    margin-top:30px;
+  }
+  
+ 
+
+  .footer-nav {
+    font-size: 14px;
+    margin: 20px 0;
+  }
+  .footer-nav a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  .footer-nav a:hover {
+    color: #3498db;
+    text-decoration: underline;
+  }
+</style>
+<meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/images/bg1.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/images/error/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/cover.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">MShBlog</span></a><a class="nav-page-title" href="/"><span class="site-name">vue3题目</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">vue3题目</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-06T07:26:46.000Z" title="发表于 2026-04-06 15:26:46">2026-04-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-06T12:54:42.072Z" title="更新于 2026-04-06 20:54:42">2026-04-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/js/">js</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/js/vue3/">vue3</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="使用-Vue-的语法来完成一个关键字匹配的搜索功能。"><a href="#使用-Vue-的语法来完成一个关键字匹配的搜索功能。" class="headerlink" title="使用 Vue 的语法来完成一个关键字匹配的搜索功能。"></a>使用 Vue 的语法来完成一个关键字匹配的搜索功能。</h2><h4 id="str方法"><a href="#str方法" class="headerlink" title="str方法"></a>str方法</h4><p><strong>search()</strong>—-<strong>索引&#x2F;-1</strong>—-大小写敏感<br><strong>includes()</strong>—<strong>true&#x2F;false</strong>—-大小写敏感<br><strong>indexOf()</strong>—<strong>索引&#x2F;-1</strong>—-大小写敏感<br>test()—true&#x2F;false—-大小写可配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Vue 3 组合式 API&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/style.css&quot; /&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;search-wrapper&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; v-model=&quot;search&quot; placeholder=&quot;请搜索&quot; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;card&quot; v-for=&quot;(item,index) in filterdList&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">          &lt;a :href=&quot;item.link&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">            &lt;img :src=&quot;item.img&quot; :alt=&quot;item.title&quot; /&gt;</span><br><span class="line">            &#123;&#123;item.title&#125;&#125;</span><br><span class="line">          &lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      const &#123; createApp, ref, computed &#125; = Vue;</span><br><span class="line"></span><br><span class="line">      class Post &#123;</span><br><span class="line">        constructor(title, link, img) &#123;</span><br><span class="line">          this.title = title;</span><br><span class="line">          this.link = link;</span><br><span class="line">          this.img = img;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      createApp(&#123;</span><br><span class="line">        setup() &#123;</span><br><span class="line">          // 使用 ref 创建响应式数据</span><br><span class="line">          const search = ref(&quot;&quot;);</span><br><span class="line">          </span><br><span class="line">          // 静态数据不需要响应式，但如果可能变化也需要 ref</span><br><span class="line">          const postList = ref([</span><br><span class="line">            new Post(</span><br><span class="line">              &quot;小猫咪&quot;,</span><br><span class="line">              &quot;https://unsplash.com/s/photos/cat&quot;,</span><br><span class="line">              &quot;./images/cat.png&quot;</span><br><span class="line">            ),</span><br><span class="line">            new Post(</span><br><span class="line">              &quot;小狗狗&quot;,</span><br><span class="line">              &quot;https://unsplash.com/@joeyc&quot;,</span><br><span class="line">              &quot;./images/dog.png&quot;</span><br><span class="line">            ),</span><br><span class="line">            new Post(</span><br><span class="line">              &quot;北极熊&quot;,</span><br><span class="line">              &quot;https://unsplash.com/@hansjurgen007&quot;,</span><br><span class="line">              &quot;./images/bar.png&quot;</span><br><span class="line">            ),</span><br><span class="line">            new Post(</span><br><span class="line">              &quot;狮子&quot;,</span><br><span class="line">              &quot;https://unsplash.com/@hansjurgen007&quot;,</span><br><span class="line">              &quot;./images/lion.png&quot;</span><br><span class="line">            ),</span><br><span class="line">            new Post(</span><br><span class="line">              &quot;小鸟&quot;,</span><br><span class="line">              &quot;https://unsplash.com/@eugenechystiakov&quot;,</span><br><span class="line">              &quot;./images/birds.png&quot;</span><br><span class="line">            ),</span><br><span class="line">            new Post(</span><br><span class="line">              &quot;狐狸&quot;,</span><br><span class="line">              &quot;https://unsplash.com/@introspectivedsgn&quot;,</span><br><span class="line">              &quot;./images/fox.png&quot;</span><br><span class="line">            ),</span><br><span class="line">          ]);</span><br><span class="line"></span><br><span class="line">          // 使用 computed 创建计算属性</span><br><span class="line">          const filteredList =computed(()=&gt;&#123;</span><br><span class="line">            return postList.value.filter(item=&gt;item.title.includes(search.value))</span><br><span class="line">          &#125;)</span><br><span class="line"></span><br><span class="line">          // 返回模板中需要使用的数据</span><br><span class="line">          return &#123;</span><br><span class="line">            search,</span><br><span class="line">            filteredList,</span><br><span class="line">          &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;).mount(&quot;#app&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="使用-vue-实现一个购物车列表"><a href="#使用-vue-实现一个购物车列表" class="headerlink" title="使用 vue 实现一个购物车列表"></a>使用 vue 实现一个购物车列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;购物车&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;./js/axios.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/element-ui.css&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/index.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot; id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;h4&gt;购物车&lt;/h4&gt;</span><br><span class="line">        &lt;!-- 购物车列表 --&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;el-card class=&quot;box-card&quot; v-for=&quot;(item,index) in carList&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">                &lt;!-- 商品图片 --&gt;</span><br><span class="line">                &lt;img :src=&quot;item.img&quot; &gt;</span><br><span class="line">                &lt;div&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;span &gt;</span><br><span class="line">                        &#123;&#123;item.name&#125;&#125;</span><br><span class="line">                        &lt;!-- 商品名称 --&gt;</span><br><span class="line">                    &lt;/span&gt;</span><br><span class="line">                    &lt;div class=&quot;bottom clearfix&quot;&gt;</span><br><span class="line">                        &lt;el-button type=&quot;text&quot; class=&quot;button&quot;&gt;+&lt;/el-button&gt;</span><br><span class="line">                        &lt;el-button type=&quot;text&quot; class=&quot;button&quot;&gt;</span><br><span class="line">                            &lt;!-- 商品数量 --&gt;&#123;&#123;item.num&#125;&#125;</span><br><span class="line">                        &lt;/el-button&gt;</span><br><span class="line">                        &lt;el-button type=&quot;text&quot; class=&quot;button&quot;&gt;-&lt;/el-button&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/el-card&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 引入组件库 --&gt;</span><br><span class="line">    &lt;script src=&quot;./js/element-ui.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script setup&gt;</span><br><span class="line">      import&#123;createApp,ref&#125;from &#x27;vue&#x27;</span><br><span class="line">      const carList=ref([])</span><br><span class="line">      axios.get(&#x27;&#x27;).then(re=&gt;carList.value=re.data)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Vue-js-知识实现一个简易的任务管理器。"><a href="#Vue-js-知识实现一个简易的任务管理器。" class="headerlink" title="Vue.js 知识实现一个简易的任务管理器。"></a>Vue.js 知识实现一个简易的任务管理器。</h2><p>具体需求如下：</p>
+<ol>
+<li>页面加载后默认显示 “暂无数据”。</li>
+<li>在输入框中输入内容并点击 “确认” 按钮后，将输入内容添加到任务列表。</li>
+<li>新增任务添加在已有任务后面。</li>
+<li>点击每条任务右侧的“删除”图标该任务会从任务列表中移除。</li>
+<li>底部 “总数” 右侧显示当前任务列表中的数量。</li>
+<li>点击底部的 “清除” 将清空任务列表中的数据，任务列表处恢复 “暂无数据” 的默认显示。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;任务管理器&lt;/title&gt;</span><br><span class="line">&lt;link type=&quot;text/css&quot; href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot; /&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;         </span><br><span class="line">&lt;div id=&quot;box&quot;&gt;</span><br><span class="line">&lt;div class=&quot;head&quot;&gt;</span><br><span class="line">        &lt;h2&gt;Todos&lt;/h2&gt;</span><br><span class="line">        &lt;p&gt;罗列日常计划，做一个时间管理大师！&lt;/p&gt;</span><br><span class="line">        &lt;div class=&quot;input&quot;&gt;</span><br><span class="line">                &lt;span&gt;内容&lt;/span&gt;</span><br><span class="line">                &lt;input type=&quot;text&quot; placeholder=&quot;请输入你要做的事&quot; v-model=&quot;input&quot; @keyup.enter=&quot;add&quot;/&gt;</span><br><span class="line">                &lt;span id=&#x27;add&#x27; @click=&quot;add&quot;&gt;确认&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul class=&quot;list&quot;&gt;</span><br><span class="line">        &lt;!-- 暂无数据提示 --&gt;</span><br><span class="line">        &lt;li v-if=&quot;taskList.length===0&quot;&gt;</span><br><span class="line">                暂无数据</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 任务列表 --&gt;</span><br><span class="line">        v-for只在数组有元素时才会渲染。</span><br><span class="line">        &lt;li v-for=&quot;(item,index) in taskList&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">                &lt;!-- 前面的序号 --&gt;</span><br><span class="line">                &lt;span class=&quot;xh&quot;&gt;&#123;&#123;index+1&#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;!-- 列表内容 --&gt;</span><br><span class="line">                &lt;span&gt;&#123;&#123;item.content&#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;!-- 删除按钮 --&gt;</span><br><span class="line">                &lt;span class=&quot;qc&quot; @click=&quot;del(index)&quot;&gt;&lt;/span&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 底部统计和清除 --&gt;</span><br><span class="line">        &lt;li v-if=&quot;taskList.length&gt;0&quot;&gt;</span><br><span class="line">                &lt;b&gt;</span><br><span class="line">                        总数：&#123;&#123;taskList.length&#125;&#125;</span><br><span class="line">                &lt;/b&gt;</span><br><span class="line">                &lt;b id=&#x27;clear&#x27; @click=&quot;clear&quot;&gt;清除&lt;/b&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">const input=ref([])</span><br><span class="line">const taskList=ref([])</span><br><span class="line">                // 添加任务</span><br><span class="line">               const addTask=() =&gt;&#123;</span><br><span class="line">                       if(input.value.trim()===&#x27;&#x27;)&#123;return;&#125;</span><br><span class="line">                       taskList.value.push(&#123;</span><br><span class="line">                        content:input.value.trim(),</span><br><span class="line">                        completed:false</span><br><span class="line">                       &#125;)</span><br><span class="line">                &#125;,</span><br><span class="line">                </span><br><span class="line">                // 删除单个任务</span><br><span class="line">                deleteTask(index) &#123;</span><br><span class="line">                    taskList.value.splice(index,1)    </span><br><span class="line">                &#125;,</span><br><span class="line">                </span><br><span class="line">                // 清除所有任务</span><br><span class="line">                clearAll() &#123;</span><br><span class="line">                 taskList.value=[]      </span><br><span class="line">                &#125;</span><br><span class="line">     </span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="菜单树检索"><a href="#菜单树检索" class="headerlink" title="菜单树检索"></a>菜单树检索</h2><p>在多级菜单树中模糊搜索匹配的菜单项，并显示出来。<br>本题需要在已提供的基础项目中使用 Vue.js 知识，实现对已提供的二级菜单树的动态渲染及模糊搜索功能，最终将符合搜索要求的二级菜单树显示在页面中。<br>页面加载后输入框内容为空，页面显示异步获取二级菜单的所有数据；输入待查找的字段后，页面中显示包含该字段的所有菜单数据，并将包含该搜索内容的菜单数据标记为黄色背景，具体表现如下：</p>
+<ol>
+<li>若该菜单有父级菜单，则返回其父级菜单及同胞菜单。</li>
+<li>若该菜单有子级菜单，则返回该菜单及其下子级菜单。</li>
+<li>若该菜单既无父级也无子级，则返回菜单本身即可。</li>
+<li>推荐测试字段：查询、首页、管理、配置、维护。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;test&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;./js/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        input &#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 32px;</span><br><span class="line">            padding-left: 5px;</span><br><span class="line">            margin-bottom: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        ul &#123;</span><br><span class="line">            list-style: none;</span><br><span class="line">            padding-left: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        li &#123;</span><br><span class="line">            margin: 5px 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 搜索输入框 --&gt;</span><br><span class="line">        &lt;input v-model=&quot;input&quot; type=&quot;text&quot; placeholder=&quot;请输入要搜索的菜单内容&quot;/&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;!-- 菜单列表 --&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">  &lt;li v-for=&quot;(items,index) in filteredList&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">  &lt;span :style=&quot;&#123;&#x27;backgroundColor&#x27;:items.meta.title.includes(input.trim())&amp;&amp;input?&#x27;yellow&#x27;:&#x27;&#x27;&#125;&quot;&gt;&#123;&#123;items.meta.title&#125;&#125;&lt;/span&gt;</span><br><span class="line">  &lt;ul v-if=&quot;items.children&amp;&amp;items.children.length&gt;0&quot;&gt;</span><br><span class="line">  &lt;li v-for=&quot;(item,index) in items.children&quot;&gt;</span><br><span class="line">  &lt;span :style=&quot;&#123;&#x27;backgroundColor&#x27;:item.meta.title.includes(inputVaue.trim())?&#x27;yellow&#x27;:&#x27;&#x27;&#125;&quot;&gt;&#123;&#123;item.meta.title&#125;&#125;&lt;/span&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    </span><br><span class="line"> &lt;script setup&gt;</span><br><span class="line">import &#123;ref,computed,onMounted&#125;from &#x27;vue&#x27;</span><br><span class="line">import&#123;axios&#125;from &#x27;axios&#x27;</span><br><span class="line">const dataList=ref([])</span><br><span class="line">const input=ref(&#x27;&#x27;)</span><br><span class="line">const filterFn=()=&gt;&#123;</span><br><span class="line">if(!input.value.trim())&#123;return dataList&#125;</span><br><span class="line">return dataList.value.filter(item=&gt;</span><br><span class="line">item.meta.title.includes(input.value)||item.children&amp;&amp;item.children.some(child=&gt;child.meta.title.includes(input.value)))</span><br><span class="line">&#125;</span><br><span class="line">const filterList=computed(()=&gt;&#123;</span><br><span class="line">return filterFn()</span><br><span class="line">&#125;)</span><br><span class="line">onMounted(()=&gt;&#123;</span><br><span class="line">  axios.get(&#x27;&#x27;).then(res=&gt;&#123;</span><br><span class="line">    dataList.value=res.data</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<strong>some()</strong>—boolean—是否存在满足条件的元素—找到一个就返回 true<br><strong>find()</strong> —返回元素&#x2F;undefined—找到第一个满足条件的元素–返回元素本身<br><strong>findIndex()</strong>–返回索引&#x2F;-1—-找到第一个满足条件的索引–返回索引位置<br><strong>filter()</strong>—新数组—过滤出所有满足条件的元素—返回新数组<br><strong>includes()</strong>—boolean—是否包含特定值—-检查值相等，不是条件</li>
+</ol>
+<h2 id="完善-mytable-vue-文件中的-TODO-部分，实现点击某个单选组件选中该行数据的效果。"><a href="#完善-mytable-vue-文件中的-TODO-部分，实现点击某个单选组件选中该行数据的效果。" class="headerlink" title="完善 mytable.vue 文件中的 TODO 部分，实现点击某个单选组件选中该行数据的效果。"></a>完善 mytable.vue 文件中的 TODO 部分，实现点击某个单选组件选中该行数据的效果。</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;main&quot;&gt;</span><br><span class="line">    &lt;el-table</span><br><span class="line">      ref=&quot;singleTable&quot;</span><br><span class="line">      highlight-current-row</span><br><span class="line">      :data=&quot;props.tableData&quot;</span><br><span class="line">      stripe</span><br><span class="line">      border</span><br><span class="line">      style=&quot;width: 100%&quot;</span><br><span class="line">      @current-change=&quot;handleCurrentChange&quot;</span><br><span class="line">    &gt;</span><br><span class="line">      &lt;!-- 单选列：自定义单选按钮列 --&gt;</span><br><span class="line">      &lt;el-table-column label=&quot;单选&quot; width=&quot;80&quot;&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;template #default=&quot;scope&quot;&gt;</span><br><span class="line">          &lt;el-radio</span><br><span class="line">            :model-value=&quot;currentRow &amp;&amp; currentRow.id === scope.row.id&quot;</span><br><span class="line">            :label=&quot;true&quot;</span><br><span class="line">            @change=&quot;handleRadioChange(scope.row)&quot;</span><br><span class="line">          &gt;</span><br><span class="line">            &amp;nbsp;</span><br><span class="line">          &lt;/el-radio&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">      &lt;/el-table-column&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;!-- 日期列：自定义显示格式 --&gt;</span><br><span class="line">      &lt;el-table-column label=&quot;日期&quot; width=&quot;180&quot;&gt;</span><br><span class="line">        &lt;template #default=&quot;scope&quot;&gt;</span><br><span class="line"></span><br><span class="line">          📅&lt;span style=&quot;margin-left: 10px&quot;&gt;&#123;&#123; scope.row.date &#125;&#125;&lt;/span&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">      &lt;/el-table-column&gt;</span><br><span class="line"></span><br><span class="line">      &lt;el-table-column prop=&quot;name&quot; label=&quot;姓名&quot; width=&quot;180&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line"></span><br><span class="line">      &lt;el-table-column prop=&quot;address&quot; label=&quot;地址&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">    &lt;/el-table&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;!-- 操作按钮区域 --&gt;</span><br><span class="line">    &lt;div class=&quot;tools&quot;&gt;</span><br><span class="line">      &lt;!--</span><br><span class="line">        选中第二行按钮</span><br><span class="line">        @click: 点击时触发 setCurrent 方法，传入第二行数据</span><br><span class="line">        props.tableData[1]: 获取表格数据的第二行（数组索引从0开始）</span><br><span class="line">      --&gt;</span><br><span class="line">      &lt;el-button @click=&quot;setCurrent(props.tableData[1])&quot;&gt;选中第二行&lt;/el-button&gt;</span><br><span class="line">      </span><br><span class="line">      &lt;!--</span><br><span class="line">        取消选择按钮</span><br><span class="line">        @click: 点击时触发 setCurrent 方法，不传参数表示取消选择</span><br><span class="line">      --&gt;</span><br><span class="line">      &lt;el-button @click=&quot;setCurrent()&quot;&gt;取消选择&lt;/el-button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">// 导入 Vue 3 的 Composition API</span><br><span class="line">import &#123; ref, defineProps &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 定义组件接收的 props</span><br><span class="line">const props=defineProps(&#123;</span><br><span class="line">  tableData:&#123;</span><br><span class="line">    type:Array,</span><br><span class="line">    default:()=&gt;[]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 响应式数据</span><br><span class="line">// ref: 创建响应式引用</span><br><span class="line">const singleTable = ref(null)  // 表格实例的引用</span><br><span class="line">const currentRow = ref(null)   // 当前选中的行数据</span><br><span class="line"></span><br><span class="line">// 方法定义</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 设置当前选中行</span><br><span class="line"> * @param &#123;Object&#125; row - 要选中的行数据，如果不传或为 undefined 则取消选择</span><br><span class="line"> */</span><br><span class="line">const setCurrent = (row) =&gt; &#123;</span><br><span class="line">if(singleTable.value)&#123;</span><br><span class="line">  singleTable.setCurrent(row)</span><br><span class="line">  currentRow.value=row</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 处理表格行选中变化事件</span><br><span class="line"> * @param &#123;Object&#125; row - 新选中的行数据</span><br><span class="line"> */</span><br><span class="line">const handleCurrentChange = (row) =&gt; &#123;</span><br><span class="line"> currentRow.value=row</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 处理单选按钮点击事件</span><br><span class="line"> * @param &#123;Object&#125; row - 点击的单选按钮对应的行数据</span><br><span class="line"> */</span><br><span class="line">const handleRadioChange = (row) =&gt; &#123;</span><br><span class="line"> setCurrent(row)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>#default&#x3D;”scope”</strong>: 插槽作用域，scope 包含当前行的数据<br><em>scope.row</em>: 当前行的数据对象<br><em>scope.row.date</em><br>&#x2F;&#x2F; 调用 Element Plus 表格的 setCurrentRow 方法设置选中行<br>    <strong>singleTable.value.setCurrentRow</strong>(row)<br>&lt;template #default&#x3D;”scope”&gt;<br></template><br><el-table-column prop="name" label="name"></el-table-column><br>&lt;el-table<br>      ref&#x3D;”singleTable”<br>      highlight-current-row<br>      :data&#x3D;”props.tableData”<br>      stripe<br>      border<br>      style&#x3D;”width: 100%”<br>      @current-change&#x3D;”handleCurrentChange”<br>    &gt;<br>      el-table 表格组件<br>      ref: 获取表格实例的引用<br>      highlight-current-row: 高亮显示当前选中的行<br>      :data: 绑定表格数据<br>      stripe: 斑马纹效果<br>      border: 显示边框<br>      @current-change: 当前行变化时触发的事件<br>            el-radio 单选按钮组件<br>            :model-value: 控制单选按钮是否选中<br>            :label: 单选按钮的值，这里固定为 true<br>            @change: 单选按钮状态变化时触发的事件<br>            &nbsp;: 不换行空格，用于占位显示<br>          &lt;el-radio<br>            :model-value&#x3D;”currentRow &amp;&amp; currentRow.id &#x3D;&#x3D;&#x3D; scope.row.id”<br>            :label&#x3D;”true”<br>            @change&#x3D;”handleRadioChange(scope.row)”<br>          &gt;<br>            &nbsp;<br>          </el-radio></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> &lt;el-table-column label=&quot;日期&quot;&gt;</span><br><span class="line">      &lt;template #default=&quot;scope&quot;&gt;</span><br><span class="line">        &#123;&#123; formateDate(scope.row.date) &#125;&#125;</span><br><span class="line">      &lt;/template&gt;</span><br><span class="line">    &lt;/el-table-column&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;;</span><br><span class="line"></span><br><span class="line">const tableData = ref([</span><br><span class="line">  &#123; id: 1, name: &#x27;张三&#x27;, date: &#x27;2024-01-15&#x27; &#125;,</span><br><span class="line">  &#123; id: 2, name: &#x27;李四&#x27;, date: &#x27;2024-01-16&#x27; &#125;,</span><br><span class="line">  &#123; id: 3, name: &#x27;王五&#x27;, date: &#x27;2024-01-17&#x27; &#125;</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line">const formatDate = (dateStr) =&gt; &#123;</span><br><span class="line">  return new Date(dateStr).toLocaleDateString();//本地化日期（不可控</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="成语学习"><a href="#成语学习" class="headerlink" title="成语学习"></a>成语学习</h2><ol>
+<li>getSingleWord 方法：点击文字后，在变量 idiom 从左到右第一个空的位置加上该文字。<br>示例一：<br>idiom&#x3D;[“”,””,””,””]，点击热字，则idiom&#x3D;[“热”,””,””,””]</li>
+<li>confirm 方法需要校验成语是否输入正确答案，猜中成语 result 为 true ；猜错成语 result 为 false。<br>示例一：<br>tip&#x3D;’形容非常感激或高兴’，idiom&#x3D;[“热”,”泪”,”盈”,”眶”]，则result返回true<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;title&quot;&gt;成语学习 (Vue 3)&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;idiom_tips_box&quot;&gt;</span><br><span class="line">      &lt;span class=&quot;detailed_description&quot;&gt;提示：&#123;&#123;tip&#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;idiom_box&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;item_box&quot; v-for=&quot;(item, index) in idiom&quot; :key=&quot;index&quot; @click=&quot;clear(index)&quot;&gt;</span><br><span class="line">        &#123;&#123;item&#125;&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;optional_words_region&quot;&gt;</span><br><span class="line">      &lt;span class=&quot;words&quot; v-for=&quot;(item, index) in words.split(&#x27;&#x27;)&quot; :key=&quot;index&quot; @click=&quot;getSingleWord(item, index)&quot;&gt;</span><br><span class="line">        &#123;&#123;item&#125;&#125;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;confirm_btn_box&quot;&gt;</span><br><span class="line">      &lt;span class=&quot;confirm_btn&quot; @click=&quot;confirm&quot;&gt;确定&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const &#123; createApp, ref, reactive &#125; = Vue;</span><br><span class="line">    </span><br><span class="line">    createApp(&#123;</span><br><span class="line">      setup() &#123;</span><br><span class="line">        // 定义响应式数据</span><br><span class="line">        const tip = ref(&quot;&quot;);</span><br><span class="line">        const currentWord = ref(&quot;&quot;);</span><br><span class="line">        const result = ref(null);</span><br><span class="line">        </span><br><span class="line">        const idiom = ref([&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]);</span><br><span class="line">        const words = ref(&quot;&quot;);</span><br><span class="line">        </span><br><span class="line">        const arr = [</span><br><span class="line">          &#123; word: &quot;热泪盈眶&quot;, tip: &quot;形容非常感激或高兴&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;才华横溢&quot;, tip: &quot;指才华充分显露出来&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;聚沙成塔&quot;, tip: &quot;比喻积少成多&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;名垂青史&quot;, tip: &quot;形容功业巨大，永远流传&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;绝无仅有&quot;, tip: &quot;形容极其稀少&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;衣衫褴褛&quot;, tip: &quot;形容身上衣服破破烂烂&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;焕然一新&quot;, tip: &quot;形容呈现出崭新的面貌&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;并驾齐驱&quot;, tip: &quot;比喻齐头并进，不分前后&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;博大精深&quot;, tip: &quot;形容思想和学识广博高深&quot; &#125;,</span><br><span class="line">          &#123; word: &quot;忙里偷闲&quot;, tip: &quot;在繁忙中抽出空闲来&quot; &#125;</span><br><span class="line">        ];</span><br><span class="line">        </span><br><span class="line">        // 初始化</span><br><span class="line">        const random=Math.floor(Math.random()*arr.length)</span><br><span class="line">        let selected=arr[random]</span><br><span class="line">        tip.value=selected.tip</span><br><span class="line">        currentWord=selected.word</span><br><span class="line">        let allWord=&#x27;&#x27;</span><br><span class="line">        arr.forEach(item=&gt;allWords+=item.word)</span><br><span class="line">        const shuffle=(arr)=&gt;&#123;</span><br><span class="line">          for(let i=arr.length-1;i&gt;0;i--)&#123;</span><br><span class="line">            const j=Math.floor(Math.random()*(i+1))</span><br><span class="line">            [arr[i],arr[j]]=[arr[j],arr[i]]</span><br><span class="line">          &#125;</span><br><span class="line">          return arr</span><br><span class="line">        &#125;</span><br><span class="line">        words=shuffle(allWords.split(&#x27;&#x27;)).join(&#x27;&#x27;)</span><br><span class="line">        </span><br><span class="line">        // 方法</span><br><span class="line">        const getSingleWord = (val, wordIndex) =&gt; &#123;</span><br><span class="line">         for(let i=0;i&lt;idiom.value.length;i++)&#123;</span><br><span class="line">          if(idiom.value[i]===&#x27;&#x27;)&#123;</span><br><span class="line">            idiom.value[i]=val</span><br><span class="line">          &#125;</span><br><span class="line">          let wordsArr=words.value.split(&#x27;&#x27;)</span><br><span class="line">          wordsArr[wordIndex]=&#x27;&#x27;</span><br><span class="line">          words.value=wordsArr.join(&#x27;&#x27;)</span><br><span class="line">         break;</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        const clear = (i) =&gt; &#123;</span><br><span class="line">         const clearW=idiom.value[i]</span><br><span class="line">         idiom.value[i]=&#x27;&#x27;</span><br><span class="line">         let wordsArr=words.value.split(&#x27;&#x27;)</span><br><span class="line">         for(let i=0;i&lt;wordsArr.length;i++)&#123;</span><br><span class="line">          if(wordsArr[i]===&#x27;&#x27;)&#123;</span><br><span class="line">            wordsArr[i]=clearW</span><br><span class="line">            break;</span><br><span class="line">          &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         words.value=wordsArr.join(&#x27;&#x27;)</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        const confirm = () =&gt; &#123;</span><br><span class="line">        if(idiom.value.some(item=&gt;item===&#x27;&#x27;))&#123;</span><br><span class="line">          alert(&#x27;4&#x27;)</span><br><span class="line">          return;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">          //验证</span><br><span class="line">        let index=arr.value.findIndex(item=&gt;item.tip===tip.value)</span><br><span class="line">        let ans=arr[index].word</span><br><span class="line">        if(ans===idiom.value.join(&quot;&quot;))&#123;</span><br><span class="line">             result.value = true;</span><br><span class="line">            alert(&quot;恭喜你，答对了！&quot;);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">          result.value = false;</span><br><span class="line">            alert(&quot;很遗憾，答案错误，请再试试看&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;  </span><br><span class="line">        </span><br><span class="line">        return &#123;</span><br><span class="line">          tip,</span><br><span class="line">          idiom,</span><br><span class="line">          words,</span><br><span class="line">          result,</span><br><span class="line">          getSingleWord,</span><br><span class="line">          clear,</span><br><span class="line">          confirm</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).mount(&#x27;#app&#x27;);</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">// 用户拖动&quot;春&quot;到答案区</span><br><span class="line">答案区: [&quot;春&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]</span><br><span class="line">可选区: &quot;,天,花,开&quot;        // &quot;春&quot;的位置变空</span><br><span class="line"></span><br><span class="line">// 清除答案区的&quot;春&quot;</span><br><span class="line">答案区: [&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]</span><br><span class="line">可选区: &quot;春,天,花,开&quot;      // &quot;春&quot;回到原来的空位</span><br><span class="line">```          </span><br><span class="line">## 输入关键字，找一首词</span><br><span class="line">1. 完成数据请求（数据来源 ./data.json），data.json 是宋词数据，poetry_content 表示词句，title 表示词牌名，author 表示词人。</span><br><span class="line">2. 在输入框输入关键词时在 ul（class = suggestions）的元素中实时显示词牌名、词句、词人中包含关键词的完整词句（包含词牌名、词人）列表，当关键词为空或者匹配不到时 ul（class = suggestions）元素的子节点为空。完整词句的 DOM 结构按照如下规定显示：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<!-- 每一首完整词句用一个 li 包裹 -->
+<li><span class="poet">词句</span>
+<span class="title">词牌名 - 词人</span>
+</li>
+例：
+<li><span class="poet"
+ >常记溪亭日暮，沉醉不知归路。兴尽晚回舟，误入藕花深处。争渡，争渡，惊起一滩鸥鹭</span
+  >
+  <span class="title">如梦令 - 李清照</span></li>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3. 高亮匹配到的所有词句中的关键词。即使用 &lt;span class=&quot;highlight&quot;&gt;&lt;/span&gt; 标签包裹所有关键词。</span><br><span class="line">例：(关键词：雨)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<li><span class="poet"
+ >寒蝉凄切，对长亭晚，骤<span class="highlight">雨</span
+ >初歇。都门帐饮无绪，方留恋处，兰舟催发。执手相看泪眼，竟无语凝噎。念去去千里烟波，暮霭沉沉楚天阔。多情自古伤离别，更那堪冷落清秋节。今宵酒醒何处，杨柳岸晓风残月。此去经年，应是良辰美景虚设。便纵有千种风情，更与何人说</span
+  >
+  <span class="title"><span class="highlight">雨</span>霖铃 - 柳永</span></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">注意：本题要求的是实时显示，即输入完成的同时显示结果，非失去焦点显示。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="en"></li>
+</ol>
+<head>
+  <meta charset="UTF-8" />
+  <title>绝美宋词</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="./js/vue.min.js"></script>
+  <script src="./js/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1 style="text-align: center">输入关键字，找一首词</h1>
+    <!-- TODO：待补充代码 -->
+    <div class="search-form">
+      <input type="text" id="search" class="search" placeholder="词牌名 词句 词人" v-model="keyword" />
+      <ul class="suggestions">
+        <li v-for="item in dataList">
+          <span class="poet" v-html="highlight(item.poetry_content)"></span>
+          <span class="title">
+            <span v-html="highlight(item.title)"></span>
+            -
+            <span v-html="highlight(item.author)"></span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+<script setup>
+import { ref, onMounted, computed } from 'vue'
+
+<p>const inputval &#x3D; ref(‘’)<br>const list &#x3D; ref([])<br>const datalist&#x3D;ref([])<br>onMounted(() &#x3D;&gt; {<br>  axios.get(‘’).then(res &#x3D;&gt; {<br>    list.value &#x3D; res.data<br>  })<br>})</p>
+<p>const datalist &#x3D; computed(() &#x3D;&gt; {<br>  if (!inputval.value.trim()) return []</p>
+<p>  const keyword &#x3D; inputval.value.trim()<br>  return list.value.filter(item &#x3D;&gt;<br>    item.poetry_content.includes(keyword) ||<br>    item.title.includes(keyword) ||<br>    item.author.includes(keyword)<br>  )<br>})</p>
+<p>const highlight &#x3D; (v) &#x3D;&gt; {<br>  if (!inputval.value.trim()) return text</p>
+<p>  return v.replaceAll(inputval.value, ‘<span class="highlight">$&amp;</span>‘)<br>}<br></script></p>
+</body>
+
+</html>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在搜索词不包含正则特殊字符时是没问题的。但如果用户输入 .、*、(等字符，就会出现错误匹配</span><br><span class="line">**return v.replaceAll(input.value,&#x27;&lt;span class=&quot;hightlight&quot;&gt;$&amp;&lt;/span&gt;&#x27;)**</span><br><span class="line"></span><br><span class="line">## 表单验证</span><br><span class="line">1. 将填写完的表单正确渲染到许愿墙上。</span><br><span class="line">2. 完成表单验证，姓名（必填项） 2-4 个字符，许愿内容（必填项）长度在 1 到 30 个字符。</span><br></pre></td></tr></table></figure>
+<template>
+  <el-form 
+    :model="form" 
+    :rules="formRules" 
+    ref="formRef" 
+    label-width="80px"
+  >
+    <el-form-item label="姓名" prop="name">
+      <el-input v-model="form.name" placeholder="请输入姓名" />
+    </el-form-item>
+    
+<pre><code>&lt;el-form-item label=&quot;许愿内容&quot; prop=&quot;content&quot;&gt;
+  &lt;el-input 
+    v-model=&quot;form.content&quot; 
+    type=&quot;textarea&quot; 
+    placeholder=&quot;请输入许愿内容&quot;
+    :rows=&quot;4&quot;
+  /&gt;
+&lt;/el-form-item&gt;
+
+&lt;el-form-item&gt;
+  &lt;el-button type=&quot;primary&quot; @click=&quot;submitForm&quot;&gt;提交&lt;/el-button&gt;
+  &lt;el-button @click=&quot;resetForm&quot;&gt;重置&lt;/el-button&gt;
+&lt;/el-form-item&gt;
+</code></pre>
+  </el-form>
+
+  <!-- 许愿列表 -->
+  <div class="wish-list">
+    <div 
+      class="card" 
+      :class="item.css" 
+      v-for="item in wishList" 
+      :key="item.id"
+    >
+      <h3></h3>
+      <p></p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, reactive, onMounted } from 'vue';
+import { ElMessage, ElMessageBox } from 'element-plus';
+
+// 响应式表单数据
+const form = reactive({
+  name: '',
+  content: ''
+});
+
+// 表单引用
+const formRef = ref();
+
+// 验证规则
+const formRules = reactive({
+  name: [
+    { required: true, message: '请输入姓名', trigger: 'blur' },
+    { min: 2, max: 4, message: '长度在 2 到 4 个字符', trigger: 'blur' },
+    { pattern: /^[\u4e00-\u9fa5]+$/, message: '姓名只能输入中文', trigger: 'blur' }
+  ],
+  content: [
+    { required: true, message: '请输入许愿内容', trigger: 'blur' },
+    { min: 1, max: 30, message: '长度在 1 到 30 个字符', trigger: 'blur' }
+  ]
+});
+
+// 许愿列表
+const wishList = ref([]);
+
+// 提交表单
+const submitForm = async () => {
+  if (!formRef.value) return;
+  
+  try {
+    // 验证表单
+    await formRef.value.validate();
+    
+    // 创建新愿望
+    const newWish = {
+      id: Date.now(),
+      //Date.now()返回自 1970年1月1日 00:00:00 UTC​ 到当前时间的毫秒数。作为唯一id
+      name: form.name,
+      content: form.content,
+      css: getRandomCssClass(), // 随机样式类
+      createdAt: new Date().toLocaleString()
+    };
+    
+    // 添加到列表
+    wishList.value.unshift(newWish);
+    
+    // 清空表单
+    formRef.value.resetFields();
+    
+    // 提示成功
+    ElMessage.success('许愿成功！');
+    
+  } catch (error) {
+    // 验证失败
+    console.log('表单验证失败:', error);
+  }
+};
+
+// 重置表单
+const resetForm = () => {
+  if (formRef.value) {
+    formRef.value.resetFields();
+  }
+};
+
+// 随机CSS类（示例）
+const getRandomCssClass = () => {
+  const classes = ['wish-card-primary', 'wish-card-success', 'wish-card-warning', 'wish-card-info'];
+  return classes[Math.floor(Math.random() * classes.length)];
+};
+
+// 初始化示例数据
+onMounted(() => {
+  wishList.value = [
+    { id: 1, name: '张三', content: '希望家人健康平安', css: 'wish-card-primary' },
+    { id: 2, name: '李四', content: '祝愿考试顺利通过', css: 'wish-card-success' },
+    { id: 3, name: '王五', content: '期待升职加薪', css: 'wish-card-warning' }
+  ];
+});
+</script>
+
+<style scoped>
+</style>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;el-form </span><br><span class="line">    :model=&quot;form&quot; </span><br><span class="line">    :rules=&quot;formRules&quot; </span><br><span class="line">    ref=&quot;formRef&quot; </span><br><span class="line">    label-width=&quot;80px&quot;</span><br><span class="line">  &gt;</span><br><span class="line">    &lt;el-form-item label=&quot;姓名&quot; prop=&quot;name&quot;&gt;</span><br><span class="line">      &lt;el-input v-model=&quot;form.name&quot; placeholder=&quot;请输入姓名&quot; /&gt;</span><br><span class="line">    &lt;/el-form-item&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;el-form-item label=&quot;许愿内容&quot; prop=&quot;content&quot;&gt;</span><br><span class="line">      &lt;el-input </span><br><span class="line">        v-model=&quot;form.content&quot; </span><br><span class="line">        type=&quot;textarea&quot; </span><br><span class="line">        placeholder=&quot;请输入许愿内容&quot;</span><br><span class="line">        :rows=&quot;4&quot;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/el-form-item&gt;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">#### 常见正则表达式</span><br><span class="line"></span><br><span class="line">1. 姓名：/^[\u4e00-\u9fa5]+$/</span><br><span class="line">加号 +表示匹配一次或多次前面的字符或字符集。</span><br><span class="line">2. 手机号：/^1[3-9]\d&#123;9&#125;$/</span><br><span class="line">3. 邮箱：/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$/</span><br><span class="line"> &lt;!-- ^​ - 字符串开始</span><br><span class="line">[a-zA-Z0-9._%+-]+​ : 邮箱用户名部分：</span><br><span class="line">[]​ : 字符集</span><br><span class="line">a-zA-Z0-9​ :字母和数字</span><br><span class="line">._%+-​ :允许的特殊字符：点、下划线、百分号、加号、减号</span><br><span class="line">+​ : 至少出现一次</span><br><span class="line">@​ :必须包含@符号</span><br><span class="line">[a-zA-Z0-9.-]+​:域名部分（@之后，点之前）：字母、数字、点、减号</span><br><span class="line">\.​ :转义的点号（必须有点）</span><br><span class="line">[a-zA-Z]&#123;2,&#125;​:顶级域名：只允许字母,至少2个字符</span><br><span class="line">$​ - 字符串结束 --&gt;</span><br><span class="line"></span><br><span class="line">4. 密码:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]&#123;8,&#125;$/</span><br><span class="line"> &lt;!-- ^​ - 字符串开始位置</span><br><span class="line">(?=.*[a-z])​ - 正向前瞻断言，确保至少包含一个小写字母</span><br><span class="line">(?=.*[A-Z])​ - 正向前瞻断言，确保至少包含一个大写字母</span><br><span class="line">(?=.*\d)​ - 正向前瞻断言，确保至少包含一个数字</span><br><span class="line">[a-zA-Z\d]&#123;8,&#125;​ - 匹配8个或以上的字母（大小写）和数字</span><br><span class="line">$​ - 字符串结束位置 --&gt;</span><br><span class="line"></span><br><span class="line">1. pattern1 </span><br><span class="line">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]&#123;8,&#125;$/</span><br><span class="line">- **字符范围限制：[a-zA-Z\d]表示只能使用字母（大小写）和数字**</span><br><span class="line">- 必须包含：**小写字母、大写字母、数字**</span><br><span class="line">- 长度：至少8位</span><br><span class="line">- 缺点：**不允许任何特殊字符**</span><br><span class="line">2. pattern2 </span><br><span class="line">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].&#123;8,&#125;$/</span><br><span class="line">- **字符范围开放：.可以匹配任意字符（除换行符外）**</span><br><span class="line">- 必须包含：**小写字母、大写字母、数字**</span><br><span class="line">- 长度：至少8位</span><br><span class="line">- 优点：**允许特殊字符、中文字符、空格等**</span><br><span class="line">3. 强制特殊字符版本 </span><br><span class="line">/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;]).&#123;8,&#125;$/</span><br><span class="line">- 必须包含：**小写字母、大写字母、数字、特殊字符（@$!%*?&amp; 中的任意一个）**</span><br><span class="line">- 字符范围开放：.允许任意字符</span><br><span class="line">- 安全性更高：**强制要求特殊字符**，密码强度更强</span><br><span class="line">.&#123;8,&#125;整体表示：至少8个任意字符， /^.&#123;8,&#125;$/</span><br><span class="line"></span><br><span class="line">/^[a-zA-Z0-9_]+$/</span><br><span class="line">4. 身份证号码</span><br><span class="line">/(^\d&#123;15&#125;$)|(^\d&#123;18&#125;$)|(^\d&#123;17&#125;(\d|X|x)$)/</span><br><span class="line"></span><br><span class="line">### 自定义验证规则</span><br><span class="line">Element Plus 提供三种方式自定义验证规则：</span><br><span class="line">#### 方式1：使用 validator自定义验证函数（最灵活） </span><br><span class="line">const rules = reactive(&#123;</span><br><span class="line"> name:[</span><br><span class="line">  &#123;required:true,trigger:&#x27;blur&#x27;&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    validator:(rule,value,callback)=&gt;&#123;</span><br><span class="line">      if(value.length&gt;4||value&lt;2)&#123;</span><br><span class="line">        callback(new Error(&quot;error&quot;))</span><br><span class="line">      &#125;</span><br><span class="line">      else if(!/[]/.test(value))&#123;</span><br><span class="line">        callback(new Error(&quot;error&quot;))</span><br><span class="line">      &#125;esle&#123;</span><br><span class="line">        callback()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,trigger:&#x27;blur&#x27;</span><br><span class="line">  &#125;</span><br><span class="line"> ]</span><br><span class="line">&#125;);</span><br><span class="line">#### 方式2：使用 pattern正则表达式 </span><br><span class="line">const rules=reactive(&#123;</span><br><span class="line">  phone:[</span><br><span class="line">    &#123;required:ture,trigger:&#x27;blur&#x27;,message:&#x27;phone&#x27;&#125;,</span><br><span class="line">    &#123;pattern:/^1[3-9]\d&#123;9&#125;$/,trigger:&#x27;blur&#x27;,message:&#x27;&#x27;&#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line">#### 两次密码一致性验证 </span><br><span class="line">&lt;el-input v-model=&quot;password&quot; show-password /&gt;</span><br><span class="line">**show-password**-这是一个布尔属性（Boolean attribute），当设置为 true时：</span><br><span class="line">1. 输入框会变成密码输入模式</span><br><span class="line">2. 右侧会出现一个眼睛图标 </span><br><span class="line">3. 点击眼睛图标可以切换明文/密文显示</span><br></pre></td></tr></table></figure>
+<template>
+  <el-form
+    ref="formRef"
+    :model="form"
+    :rules="rules"
+    label-width="100px"
+  >
+    <!-- 密码输入 -->
+    <el-form-item label="密码" prop="password">
+      <el-input
+        v-model="form.password"
+        type="password"
+        placeholder="请输入密码"
+        show-password
+      />
+    </el-form-item>
+    
+<pre><code>&lt;!-- 确认密码 --&gt;
+&lt;el-form-item label=&quot;确认密码&quot; prop=&quot;confirmPassword&quot;&gt;
+  &lt;el-input
+    v-model=&quot;form.confirmPassword&quot;
+    type=&quot;password&quot;
+    placeholder=&quot;请再次输入密码&quot;
+    show-password
+  /&gt;
+&lt;/el-form-item&gt;
+
+&lt;!-- 提交按钮 --&gt;
+&lt;el-form-item&gt;
+  &lt;el-button type=&quot;primary&quot; @click=&quot;submitForm&quot;&gt;提交&lt;/el-button&gt;
+  &lt;el-button @click=&quot;resetForm&quot;&gt;重置&lt;/el-button&gt;
+&lt;/el-form-item&gt;
+</code></pre>
+  </el-form>
+</template>
+
+<script setup>
+import { reactive, ref } from 'vue'
+import { ElMessage } from 'element-plus'
+
+// 表单数据
+const form = reactive({
+  password: '',
+  confirmPassword: ''
+})
+
+// 表单引用
+const formRef = ref()
+
+// 验证规则
+const rules = reactive({
+  password: [
+    { required: true, message: '请输入密码', trigger: 'blur' },
+    { min: 6, message: '密码至少6位', trigger: 'blur' }
+  ],
+  confirmPassword: [
+    { required: true, message: '请确认密码', trigger: 'blur' },
+    {
+      validator: (rule, value, callback) => {
+        if (value !== form.password) {
+          callback(new Error('两次输入的密码不一致'))
+        } else {
+          callback()
+        }
+      },
+      trigger: 'blur'
+    }
+  ]
+})
+
+// 提交表单
+const submitForm = () => {
+  if (!formRef.value) return
+  
+  formRef.value.validate((valid) => {
+    if (valid) {
+      console.log('表单验证通过', form)
+      ElMessage.success('提交成功！')
+      // 这里可以调用API提交数据
+    } else {
+      console.log('表单验证失败')
+      ElMessage.error('请检查表单输入')
+      return false
+    }
+  })
+}
+
+// 重置表单
+const resetForm = () => {
+  if (!formRef.value) return
+  formRef.value.resetFields()
+}
+</script>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 表单验证示例</span><br></pre></td></tr></table></figure>
+<template>
+<el-form :model="form" :rules="rules" ref="formRef" label-width="100px">
+<el-form-item label="姓名" prop="name">
+<el-input v-model="form.name" placeholder="请输入真实姓名" />
+</el-form-item>
+<el-form-item label="手机号" prop="phone">
+<el-input v-model="form.phone" placeholder="请输入手机号码" />
+</el-form-item>
+<el-form-item label="邮箱" prop="email">
+<el-input v-model="form.email" placeholder="请输入邮箱" /></el-form-item>
+<el-form-item label="身份证" prop="idCard">
+<el-input v-model="form.idCard" placeholder="请输入身份证号" />
+</el-form-item>
+<el-form-item>
+<el-button type="primary" @click="submitForm">提交</el-button></el-form-item></el-form></template>
+<script setup>
+import { reactive, ref } from 'vue';
+
+<p>const form &#x3D; reactive({<br>  name: ‘’,<br>  phone: ‘’,<br>  email: ‘’,<br>  idCard: ‘’<br>});</p>
+<p>const formRef &#x3D; ref();</p>
+<p>&#x2F;&#x2F; 自定义验证函数<br>const validateChineseName &#x3D; (rule, value, callback) &#x3D;&gt; {<br>  if (!value) {<br>    return callback(new Error(‘姓名不能为空’));<br>  }<br>  if (!&#x2F;^[\u4e00-\u9fa5]+$&#x2F;.test(value)) {<br>    callback(new Error(‘姓名只能包含中文’));<br>  } else if (value.length &lt; 2 || value.length &gt; 4) {<br>    callback(new Error(‘姓名长度为2-4个字符’));<br>  } else {<br>    callback();<br>  }<br>};</p>
+<p>const validatePhone &#x3D; (rule, value, callback) &#x3D;&gt; {<br>  const phoneReg &#x3D; &#x2F;^1[3-9]\d{9}$&#x2F;;<br>  if (!value) {<br>    callback(new Error(‘手机号不能为空’));<br>  } else if (!phoneReg.test(value)) {<br>    callback(new Error(‘请输入正确的手机号码’));<br>  } else {<br>    callback();<br>  }<br>};</p>
+<p>const validateIdCard &#x3D; (rule, value, callback) &#x3D;&gt; {<br>  const idCardReg &#x3D; &#x2F;(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)&#x2F;;<br>  if (!value) {<br>    callback(new Error(‘身份证号不能为空’));<br>  } else if (!idCardReg.test(value)) {<br>    callback(new Error(‘请输入正确的身份证号码’));<br>  } else {<br>    callback();<br>  }<br>};</p>
+<p>&#x2F;&#x2F; 验证规则<br>const rules &#x3D; reactive({<br>  name: [<br>    { validator: validateChineseName, trigger: ‘blur’ }<br>  ],<br>  phone: [<br>    { validator: validatePhone, trigger: ‘blur’ }<br>  ],<br>  email: [<br>    { required: true, message: ‘邮箱不能为空’, trigger: ‘blur’ },<br>    { type: ‘email’, message: ‘请输入正确的邮箱地址’, trigger: ‘blur’ }<br>  ],<br>  idCard: [<br>    { validator: validateIdCard, trigger: ‘blur’ }<br>  ]<br>});</p>
+<p>const submitForm &#x3D; async () &#x3D;&gt; {<br>  try {<br>    await formRef.value.validate();<br>    console.log(‘表单验证通过’, form);<br>  } catch (error) {<br>    console.log(‘表单验证失败’, error);<br>  }<br>};<br></script></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">## 切换商品列表布局</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="en">
+ 
+  <body>
+    <div id="app" v-cloak>
+      <!-- TODO：请在下面实现需求 -->
+      <div class="bar">
+        <a class="grid-icon" :class="{active:active==1}" @click="active=1"></a>
+        <a class="list-icon" :class="{active:active==2}" @click="active=2"></a>
+      </div>
+      <!--grid 示例代码，动态渲染时可删除-->
+      <ul class="grid" v-show="active==1">
+        <li v-for="(item,index) in goodsList" :key="index">
+          <a :href="item.url" target="_blank"> <img :src="item.image.large" /></a>
+        </li>
+      </ul>
+      <ul class="list" v-show="active==2">
+        <li v-for="(item,index) in goodsList" :key="index">
+          <a :href="item.url" target="_blank"> <img :src="item.image.small" /></a>
+          <p></p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  const goodsList=ref([])
+  const active=ref(1)
+  onMounted(()=>{
+  axios.get('').then(re=>goodsList.value=re.data)})
+</script>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">v-show不支持 &lt;template&gt;元素</span><br><span class="line">初始渲染成本：v-show始终渲染，即使条件为假</span><br><span class="line">与 v-if一起使用：v-if的优先级高于 v-show</span><br><span class="line">动态组件：频繁切换时用 v-show，不频繁时用 v-if</span><br><span class="line"></span><br><span class="line">_self当前窗口（默认）</span><br><span class="line">&lt;a href=&quot;...&quot; target=&quot;_self&quot;&gt;</span><br><span class="line">_blank新窗口/标签页</span><br><span class="line">&lt;a href=&quot;...&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line"></span><br><span class="line">## 购物车功能</span><br><span class="line">修改 addToCart 方法，实现将商品加入到购物车的功能。即：</span><br><span class="line">1. 点击“加入购物车”按钮后，如果购物车中不存在该商品，则将该商品添加到购物车末尾，并初始化数量为 1；</span><br><span class="line">2. 如果购物车中已存在该商品，则只在原数量上 +1 即可。</span><br><span class="line">（2）完善 removeGoods 方法，实现移出购物车商品功能。即：</span><br><span class="line">1. 点击购物车商品后对应的减号（“-”）按钮，将其数量在原数量上 -1；</span><br><span class="line">2. 如果减后数量为 0，则将该商品从购物车中移除。</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html>
+ 
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;!-- 商品列表 --&gt;
+        &lt;h3&gt;商品列表&lt;/h3&gt;
+        &lt;ul id=&quot;goodsList&quot;&gt;
+          &lt;template v-for=&quot;goods in goodsList&quot; &gt;
+            &lt;li class=&quot;goods-item&quot; :key=&quot;goods.id&quot;&gt;
+                &lt;div&gt;&lt;img :src=&quot;goods.imgUrl&quot;/&gt; &lt;/div&gt; 
+                &lt;div&gt;&#123;&#123;goods.name&#125;&#125;&lt;/div&gt; 
+                &lt;div&gt;¥ &#123;&#123;goods.price&#125;&#125; &lt;/div&gt; 
+                &lt;button @click=&quot;addToCart(goods)&quot;&gt;加入购物车&lt;/button&gt; 
+            &lt;/li&gt;
+          &lt;/template&gt;
+        &lt;/ul&gt;
+        &lt;!-- 购物车 --&gt;
+        &lt;template v-if=&quot;cartList.length&gt;0&quot;&gt;
+          &lt;h3&gt;购物车&lt;/h3&gt;
+          &lt;ul id=&quot;cartList&quot;&gt;
+            &lt;template v-for=&quot;goods in cartList&quot;&gt;
+              &lt;li class=&quot;goods-item&quot; :key=&quot;goods.id&quot;&gt;
+                  &lt;div&gt;&lt;img :src=&quot;goods.imgUrl&quot;/&gt; &lt;/div&gt; 
+                  &lt;div&gt;&#123;&#123;goods.name&#125;&#125;&lt;/div&gt; 
+                  &lt;div&gt;¥ &#123;&#123;goods.price&#125;&#125; &lt;/div&gt; 
+                  &lt;div class=&quot;item-control&quot;&gt;
+                      &lt;button @click=&quot;removeGoods(goods)&quot;&gt;-&lt;/button&gt;
+                      &lt;h4&gt;&#123;&#123;goods.num&#125;&#125;&lt;/h4&gt;
+                      &lt;button @click=&quot;addToCart(goods)&quot;&gt;+&lt;/button&gt; 
+                  &lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/template&gt;
+          &lt;/ul&gt;
+        &lt;/template&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+</html>
+
+
+<script setup>
+import { ref, computed, onMounted } from 'vue'
+
+// 假设 GoodsArr 是从外部导入的
+// import GoodsArr from './data.js'
+
+const cartList = ref([])
+const goodsList = ref([])
+
+onMounted(() => {
+  // 模拟数据
+  goodsList.value = GoodsArr || [
+    { id: 1, name: '商品1', price: 10.00 },
+    { id: 2, name: '商品2', price: 20.00 },
+    { id: 3, name: '商品3', price: 30.00 }
+  ]
+})
+
+// 总价 - 修正了 reduce 方法的调用
+const totalPrice = computed(() => {
+ return cartList.value.reduce((total,item)=>total+item.price*item.num,0)
+})
+
+// 总数量
+const totalCount = computed(() => {
+  return cartList.value.reduce((s,item)=>s+item.num,0)
+})
+
+// 添加到购物车
+const addToCart = (goods) => {
+ const exist=carList.value.find(item=>item.id===goods.id)
+ if(exist){
+  exist.num++
+ }else{
+  const new={
+    ...goods,num:1
+  }
+  carList.value.push(new)
+ }
+}
+
+// 移除商品
+const removeGoods = (goods) => {
+ const itemIndex=carList.value.findIndex(item=>item.id===goods.id)
+ if(itemIndex!==-1){
+if(carList.value[itemIndex].num>1){carList.value[itemIndex].num--}
+else{
+  carList.value.splice(itemIndex,1)
+}
+ }
+}
+</script>
+
+<p>&#x2F;&#x2F; 查找id为2的商品<br>const banana &#x3D; cartList.find(item &#x3D;&gt; item.id &#x3D;&#x3D;&#x3D; 2);<br>console.log(banana);<br>&#x2F;&#x2F; { id: 2, name: “香蕉”, price: 3, num: 1 }</p>
+<pre><code>**find()方法**
+基本语法 
+array.find(callback()
+功能 
+返回数组中第一个满足测试函数的元素
+如果没找到，返回 undefined
+
+**findIndex()方法**
+基本语法
+array.findIndex()
+功能
+返回数组中第一个满足测试函数的元素索引
+如果没找到，返回 -1
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://msh-18751628429.github.io">Msh</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://msh-18751628429.github.io/2026/04/06/lanqiao-vue1/">https://msh-18751628429.github.io/2026/04/06/lanqiao-vue1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://msh-18751628429.github.io" target="_blank">MShBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><a class="post-meta__tags" href="/tags/vue3/">vue3</a></div><div class="post-share"><div class="social-share" data-image="/images/cover.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/06/lanqiao-vue2/" title="vue3题目"><img class="cover" src="/images/cover.jpg" onerror="onerror=null;src='/images/error/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">vue3题目</div></div><div class="info-2"><div class="info-item-1">登录token&#x2F;&#x2F;src&#x2F;api&#x2F;auth.js 123456789101112131415161718192021222324252627282930313233343536373839404142434445import axios from &#x27;axios&#x27;const api=axios.create(&#123;  timeout:10000,  baseURL:&#x27;&#x27;  headers:&#123;    &#x27;Content-Type&#x27;:&#x27;application/json&#x27;  &#125;&#125;)api.interceptors.request.use(&#123;  config=&gt;&#123;    const token=localStorage.getItem(&#x27;token&#x27;)    if(token)&#123;      config.headers.Authorization:`Bearer $&#123;tok...</div></div></div></a><a class="pagination-related" href="/2026/04/06/lanqiao5/" title="lanqiao5"><img class="cover" src="/images/cover.jpg" onerror="onerror=null;src='/images/error/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">lanqiao5</div></div><div class="info-2"><div class="info-item-1">垃圾分类我们将实现一个垃圾分类系统。用户可以点击一键分类按钮，将垃圾按照类型分为厨余垃圾、可回收垃圾、其他垃圾和有害垃圾四类。分类完成后，系统将显示每类垃圾的具体内容。完善 index.html 中的 garbagesorting 方法。点击一键分类，把垃圾 waste 中的数据中的 txt 根据分类 type 依次放到对应的数组，对应的数组如下：let food_waste &#x3D; ref([]);&#x2F;&#x2F;厨余垃圾let recyclable_waste &#x3D; ref([]);&#x2F;&#x2F;可回收垃圾let other_waste &#x3D; ref([]);&#x2F;&#x2F;其他垃圾let harmful_waste &#x3D; ref([]);&#x2F;&#x2F;有害垃圾。如 food_waste 最后的结果是 [“剩菜剩饭”, “骨头”, “菜根菜叶”]。 1234567891011121314151617 const waste = ref([        &#123; type: &quot;厨余垃圾&quot;...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/04/06/lanqiao-vue2/" title="vue3题目"><img class="cover" src="/images/cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-06</div><div class="info-item-2">vue3题目</div></div><div class="info-2"><div class="info-item-1">登录token&#x2F;&#x2F;src&#x2F;api&#x2F;auth.js 123456789101112131415161718192021222324252627282930313233343536373839404142434445import axios from &#x27;axios&#x27;const api=axios.create(&#123;  timeout:10000,  baseURL:&#x27;&#x27;  headers:&#123;    &#x27;Content-Type&#x27;:&#x27;application/json&#x27;  &#125;&#125;)api.interceptors.request.use(&#123;  config=&gt;&#123;    const token=localStorage.getItem(&#x27;token&#x27;)    if(token)&#123;      config.headers.Authorization:`Bearer $&#123;tok...</div></div></div></a><a class="pagination-related no-desc" href="/2026/04/07/lanqiao-vue4/" title="lanqiao-vue4"><img class="cover" src="/images/cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-07</div><div class="info-item-2">lanqiao-vue4</div></div></div></a><a class="pagination-related" href="/2026/04/07/lanqiao-vue3/" title="lanqiao-vue3"><img class="cover" src="/images/cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-07</div><div class="info-item-2">lanqiao-vue3</div></div><div class="info-2"><div class="info-item-1">定制方案 点击“定制方案”按钮后，弹出侧滑页面，所使用的组件为 el-drawer，相关属性如下：暂时无法在飞书文档外展示此内容 封装 sortItem 函数，按照食物属性名称将早餐&#x2F;午餐&#x2F;晚餐的数组数据从大到小排序，然后找到排序后的数组中第一个不大于对应摄入量上限的食材对象，并将其返回。sortItem 参数：   arr：早餐&#x2F;午餐&#x2F;晚餐的数据。  pro：食物属性名称，可取值 carbohydrate&#x2F;protein&#x2F;fat。  compare：糖类、蛋白质、脂肪的对应摄入量上限值，作为比较条件用的，已传入具体值。sortItem 返回值示例{ “name”: “鸡蛋”, “carbohydrate”: 1.5, “protein”: 12.7, “fat”: 9, “kcal”: 138, “weight”: 100} 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535...</div></div></div></a><a class="pagination-related" href="/2026/03/20/echarts/" title="echarts题目"><img class="cover" src="/images/cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-20</div><div class="info-item-2">echarts题目</div></div><div class="info-2"><div class="info-item-1">统计学习时间图表 完成数据请求（数据来源 .&#x2F;data.json），data.json 中存放的数据为对应月份中小蓝每天的学习时长，单位为分钟（在项目目录下已经提供了 axios，考生可自行选择是否使用）。 页面加载完成后，默认显示周统计数据。点击周和月，x 轴对应显示正确的周数(格式为:”x 月 x 周”)和月份，Y 轴显示小蓝对应周和对应月学习的总时长。{  “code”: 200,  “desc”: “请求成功”,  “data”: { “2月”: [   30, 40, 30, 20, 10, 20, 30, 69, 86, 12, 32, 12, 23, 40, 50, 61, 39, 28,   20, 35, 20, 38, 43, 52, 30, 39, 52, 70 ], “3月”: [   36, 48, 52, 30, 39, 52, 20, 18, 25, 33, 21, 36, 44, 63, 32, 89, 98, 23,   25, 36, 29, 31, 42, 23, 45, 56, 98, 83, 25, 28, 48 ]  }}12...</div></div></div></a><a class="pagination-related" href="/2026/04/04/lanqiao2/" title="题目"><img class="cover" src="/images/cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-04</div><div class="info-item-2">题目</div></div><div class="info-2"><div class="info-item-1">小蓝驿站 contacts为联系人列表, sortedContacts 是将联系人列表 contacts 按照字母 A-Z 排序的数据，数据中的 letter 为联系人组名称（大写），数据中的 contacts 为当前组的联系人数组，数据结构如下：[ {“letter”: “A”,  &#x2F;&#x2F; 组名称，大写 “contacts”: [  &#x2F;&#x2F; 当前组联系人数组 { “name”: “Alice Adams” },  &#x2F;&#x2F; 联系人名字，不区分大小写 { “name”: “Alex Anderson” } ] }, { “letter”: “B”, “contacts”: […] }]  将排序后联系人数据 sortedContacts 按照下面示例的 DOM 结构，完成渲染。注意：sortedContacts 为动态数据，请注意代码的通用性。2. 完善 addContact 函数，完成联系人添加功能。如果联系人组已存在，则直接添加联系人到该组；如果联系人组不存在，则新建一个联系人组和联系人添加到联系人列表contacts。本题...</div></div></div></a><a class="pagination-related" href="/2026/04/06/lanqiao4/" title="lanqiao4"><img class="cover" src="/images/cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-06</div><div class="info-item-2">lanqiao4</div></div><div class="info-2"><div class="info-item-1">拖拽商品用鼠标按下拖动图片到购物车（即 id&#x3D;”trolley” 的节点）中，然后松开鼠标，购物车会添加拖动的商品，并显示购物车商品数量。下方（即 class&#x3D;”result” 的方框）会显示购物车中商品的详情，详情以商品名 x 数量的形式展示，商品之间通过空格间隔。下方（即 class&#x3D;”result” 的方框）同时还会显示购物车中商品的总价。 12345678910111213141516171819&lt;!-- 正确：显式传递 $event --&gt;&lt;div @click=&quot;handleClick($event, good)&quot;&gt;点击我&lt;/div&gt;&lt;script&gt;methods: &#123;  handleClick(event, good) &#123;    console.log(event.target);  // 可以访问事件对象    console.log(good);          // 也可以访问商品数据  &#125;&#125;&lt;/script&gt;...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/avatar.jpg" onerror="this.onerror=null;this.src='/images/error/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Msh</div><div class="author-info-description">这是一个关于编程、技术和生活的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/msh-18751628429"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Vue-%E7%9A%84%E8%AF%AD%E6%B3%95%E6%9D%A5%E5%AE%8C%E6%88%90%E4%B8%80%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AD%97%E5%8C%B9%E9%85%8D%E7%9A%84%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E3%80%82"><span class="toc-number">1.</span> <span class="toc-text">使用 Vue 的语法来完成一个关键字匹配的搜索功能。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#str%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.1.</span> <span class="toc-text">str方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-vue-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%B4%AD%E7%89%A9%E8%BD%A6%E5%88%97%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">使用 vue 实现一个购物车列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js-%E7%9F%A5%E8%AF%86%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E6%98%93%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E3%80%82"><span class="toc-number">3.</span> <span class="toc-text">Vue.js 知识实现一个简易的任务管理器。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E6%A0%91%E6%A3%80%E7%B4%A2"><span class="toc-number">4.</span> <span class="toc-text">菜单树检索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E5%96%84-mytable-vue-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84-TODO-%E9%83%A8%E5%88%86%EF%BC%8C%E5%AE%9E%E7%8E%B0%E7%82%B9%E5%87%BB%E6%9F%90%E4%B8%AA%E5%8D%95%E9%80%89%E7%BB%84%E4%BB%B6%E9%80%89%E4%B8%AD%E8%AF%A5%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E6%95%88%E6%9E%9C%E3%80%82"><span class="toc-number">5.</span> <span class="toc-text">完善 mytable.vue 文件中的 TODO 部分，实现点击某个单选组件选中该行数据的效果。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E8%AF%AD%E5%AD%A6%E4%B9%A0"><span class="toc-number">6.</span> <span class="toc-text">成语学习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-number"></span> <span class="toc-text">输入关键字，找一首词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">0.1.</span> <span class="toc-text"></span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/04/07/lanqiao-vue4/" title="lanqiao-vue4"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="lanqiao-vue4"/></a><div class="content"><a class="title" href="/2026/04/07/lanqiao-vue4/" title="lanqiao-vue4">lanqiao-vue4</a><time datetime="2026-04-07T13:45:23.000Z" title="发表于 2026-04-07 21:45:23">2026-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/07/lanqiao-vue3/" title="lanqiao-vue3"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="lanqiao-vue3"/></a><div class="content"><a class="title" href="/2026/04/07/lanqiao-vue3/" title="lanqiao-vue3">lanqiao-vue3</a><time datetime="2026-04-07T11:21:47.000Z" title="发表于 2026-04-07 19:21:47">2026-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/06/lanqiao-vue2/" title="vue3题目"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="vue3题目"/></a><div class="content"><a class="title" href="/2026/04/06/lanqiao-vue2/" title="vue3题目">vue3题目</a><time datetime="2026-04-06T12:53:32.000Z" title="发表于 2026-04-06 20:53:32">2026-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/06/lanqiao-vue1/" title="vue3题目"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="vue3题目"/></a><div class="content"><a class="title" href="/2026/04/06/lanqiao-vue1/" title="vue3题目">vue3题目</a><time datetime="2026-04-06T07:26:46.000Z" title="发表于 2026-04-06 15:26:46">2026-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/06/lanqiao5/" title="lanqiao5"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="lanqiao5"/></a><div class="content"><a class="title" href="/2026/04/06/lanqiao5/" title="lanqiao5">lanqiao5</a><time datetime="2026-04-06T06:41:05.000Z" title="发表于 2026-04-06 14:41:05">2026-04-06</time></div></div></div></div></div></div></main><footer id="footer" style="background: [object Object];"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Msh</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://your-domain.com',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client@3.8.0/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
