@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s41.ax1x.com/2026/04/14/peDz7ut.jpg">
 <meta property="article:published_time" content="2026-04-08T11:58:10.951Z">
-<meta property="article:modified_time" content="2026-04-08T12:30:14.475Z">
+<meta property="article:modified_time" content="2026-04-15T06:22:43.887Z">
 <meta property="article:author" content="Msh">
 <meta property="article:tag" content="编程,技术,博客,前端,后端">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "https://msh-18751628429.github.io/2026/04/08/echartspoints/",
   "image": "https://s41.ax1x.com/2026/04/14/peDz7ut.jpg",
   "datePublished": "2026-04-08T11:58:10.951Z",
-  "dateModified": "2026-04-08T12:30:14.475Z",
+  "dateModified": "2026-04-15T06:22:43.887Z",
   "author": [
     {
       "@type": "Person",
@@ -121,7 +121,7 @@
   algolia: undefined,
   localSearch: undefined,
   translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":true},
   copy: {
     success: '复制成功',
     error: '复制失败',
@@ -160,162 +160,49 @@
   isToc: false,
   pageType: 'post'
 }</script><style>
-  /* 黑暗模式代码块全局修复 */
-[data-theme="dark"] {
-  --highlight-bg: #1e1e1e;
-  --highlight-border: #2d2d2d;
-  --highlight-color: #d4d4d4;
-}
-
-[data-theme="dark"] .highlight,
-[data-theme="dark"] pre,
-[data-theme="dark"] code.hljs {
-  background: var(--highlight-bg) !important;
-  border-color: var(--highlight-border) !important;
-  color: var(--highlight-color) !important;
-}
-
-/* 行号背景 */
-[data-theme="dark"] .highlight .gutter {
-  background-color: #252526 !important;
-  border-right: 1px solid #2d2d2d !important;
-}
-
-/* 代码块标题栏 */
-[data-theme="dark"] .highlight figcaption {
-  background-color: #252526 !important;
-  border-bottom: 1px solid #2d2d2d !important;
-  color: #ccc !important;
-}
-  
-  #body-wrap .post{
-   background: rgba(255, 255, 255, 0.4) !important;
-    backdrop-filter: blur(3px);
-    
-    -webkit-backdrop-filter: blur(2px) saturate(180%);
-   
-  }
-  #card-toc .card-widget{
-
-  background:rgba(255,255,255,0.4)!important;
-  }
-  /* TOC 项 */
-  #aside-content #card-toc .toc-item .toc-link {
-    color:#504e4e!important;
-  }
-  
-  /* TOC 激活项 */
-  #aside-content #card-toc .toc-item.active .toc-link {
-    color:#121212 !important;
-    
-    background:rgba(255,255,255,0.5)!important;
  
-  }
-  
-  /* TOC 悬停 */
-  #aside-content #card-toc .toc-item .toc-link:hover {
-    color:#121212 !important;
-   background:rgba(255,255,255,0.5)!important;
  
-  }
   
-  #post{
-   background:rgba(255,255,255,0.45)!important;
- 
-  }
-  #recent-posts .recent-post-item > .recent-post-info > .article-title {
-    color: #121212!important;}
-  #recent-posts .recent-post-item > .recent-post-info > .article-meta-wrap{
-    color: #121212!important;}
-  #recent-posts .recent-post-item > .recent-post-info > .post-meta-date {
-    color: #121212!important;}
-  #recent-posts .recent-post-item > .recent-post-info > .content {
-    color: #121212!important;}
-  /* 卡片背景 */
-  #recent-posts .recent-post-item {
-  border:1px solid #bbbab175;
-  background: rgba(255,255,255,0.5) !important;
-    backdrop-filter: blur(3px) !important;
-    -webkit-backdrop-filter: blur(1px) !important;}
-  #content-inner {
-  border:1px solid #bbbab175;
-    background-color: rgba(255,255,255,0.5) !important;
-  }
-  .container pre{
-  background: rgba(255, 255, 255,0.55) !important;
-  }
-   .card-widget {
-   color:#121212;
-   border:1px solid #bbbab175;
-     background:  rgba(255,255,255,0.5) !important;
-    backdrop-filter: blur(2px) !important;
-    -webkit-backdrop-filter: blur(5px) !important;}
-  }
-   
-  .site-data .headline{
-  color:#121212!important;
-  }
-  .site-data .headline{
-  color:#121212!important;
-  }
-  #aside-content .aside-list > .aside-list-item .content > .title{
-  color:rgba(56,165,187)!important;}
-  
-  .site-data > a .length-num{color:rgba(56,165,187)!important;}
-
-  #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a span{
-  color:#504e4e!important;}
-
-  .card-recent-post .aside-list .no-cover .title,.card-recent-post .aside-list .no-cover time{
-  color:#121212!important;}
-
-  #aside-content .card-categories ul.card-category-list > .card-category-list-item a span{
-  color:#504e4e!important;}
-  /* 归档页面卡片样式 */
-  #archive{
-  background:rgba(255,255,255,0.3);
- 
-  color:#504e4e!important;
-  border:1px solid #bbbab175;
-  }
-  #archive .article-sort-item-title{color:#504e4e!important;}
-  
-  
-  /* 分类页面卡片样式 */
-  #page{
-  background: rgba(255,255,255,0.5);
-  border:1px solid #bbbab175;
-  backdrop-filter: blur(5px) !important;
-  color:#504e4e!important;
-  }
-
-  /* 标签页面卡片样式 */
-  #tag{
-  border:1px solid #bbbab175;
-  backdrop-filter: blur(5px) !important;
-  background: rgba(255,255,255,0.5);
-  color:#504e4e!important;
-  }
-  #nav {
-    background: rgba(255, 255, 255, 0.1);
-    font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
-    
-  }
-   #footer {
-    background: rgba(255, 255, 255, 0.5) !important;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(2px) saturate(180%);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    color: #333;
-    margin-top:30px;
-  }
-  
- 
-
-  .footer-nav {
-    font-size: 14px;
-    margin: 20px 0;
-  }
+       /* TOC 项 */
+    #aside-content #card-toc .toc-item .toc-link {
+      color:#504e4e!important;
+    }
+    /* TOC 激活项 */
+    #aside-content #card-toc .toc-item.active .toc-link {
+      color:#121212 !important;
+      background:rgba(255,255,255,0.5)!important;
+    }
+    /* TOC 悬停 */
+    #aside-content #card-toc .toc-item .toc-link:hover {
+      color:#121212 !important;
+      background:rgba(255,255,255,0.5)!important;
+    }
+    #nav {
+      background: rgba(255, 255, 255, 0.1);
+      font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+    }
+    #footer {
+      background: rgba(255, 255, 255, 0.5) !important;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(2px) saturate(180%);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      color: #333;
+      margin-top:30px;
+    }
+    .footer-nav {
+      font-size: 14px;
+      margin: 20px 0;
+    }
+    .footer-nav a {
+      color: #666;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    .footer-nav a:hover {
+      color: #3498db;
+      text-decoration: underline;
+    }
   .footer-nav a {
     color: #666;
     text-decoration: none;
@@ -327,12 +214,12 @@
     text-decoration: underline;
   }
 </style>
-<meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/images/bg1.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://s41.ax1x.com/2026/04/14/peDz7ut.jpg" onerror="this.onerror=null;this.src='/images/error/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/home.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">MShBlog</span></a><a class="nav-page-title" href="/"><span class="site-name">MShBlog</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">无标题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-08T11:58:10.951Z" title="发表于 2026-04-08 19:58:10">2026-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-08T12:30:14.475Z" title="更新于 2026-04-08 20:30:14">2026-04-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">265</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/04/08/echartspoints/#post-comment"><span class="waline-comment-count" data-path="/2026/04/08/echartspoints/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>option&#x3D;{<br>  title:{<br>    subtitle:””,<br>    text:””,<br>    left:center<br>  },<br>  toolbox:{<br>    show:true,<br>    feature:{<br>      mark:{<br>        show:true<br>      },<br>      saveAsImage:{<br>        show:true<br>      },<br>      restore:{<br>        show:ture<br>      },<br>      dataView:{<br>        show:true,<br>        readOnly:false<br>      }<br>    }<br>  },<br>  tooltip:{<br>    trigger:’axis’,<br>    axisPointer:{<br>      type:”shadow&#x2F;line”<br>    }<br>  },<br>  legend:{<br>    bottom:”0%”,<br>    left:”20%”,<br>    itemWidth:10,<br>    itemHeight:10,<br>    data:[‘1’,’2’],<br>    textStyle:{<br>      color:”rgba()”,<br>      fontSize:’12’,</p>
+<meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(/images/bg1.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://s41.ax1x.com/2026/04/14/peDz7ut.jpg" onerror="this.onerror=null;this.src='/images/error/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/home.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">MShBlog</span></a><a class="nav-page-title" href="/"><span class="site-name">MShBlog</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">无标题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-08T11:58:10.951Z" title="发表于 2026-04-08 19:58:10">2026-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-15T06:22:43.887Z" title="更新于 2026-04-15 14:22:43">2026-04-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">265</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2026/04/08/echartspoints/#post-comment"><span class="waline-comment-count" data-path="/2026/04/08/echartspoints/"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>option&#x3D;{<br>  title:{<br>    subtitle:””,<br>    text:””,<br>    left:center<br>  },<br>  toolbox:{<br>    show:true,<br>    feature:{<br>      mark:{<br>        show:true<br>      },<br>      saveAsImage:{<br>        show:true<br>      },<br>      restore:{<br>        show:ture<br>      },<br>      dataView:{<br>        show:true,<br>        readOnly:false<br>      }<br>    }<br>  },<br>  tooltip:{<br>    trigger:’axis’,<br>    axisPointer:{<br>      type:”shadow&#x2F;line”<br>    }<br>  },<br>  legend:{<br>    bottom:”0%”,<br>    left:”20%”,<br>    itemWidth:10,<br>    itemHeight:10,<br>    data:[‘1’,’2’],<br>    textStyle:{<br>      color:”rgba()”,<br>      fontSize:’12’,</p>
 <pre><code>&#125;
 </code></pre>
 <p>  },<br>  grid:{<br>    left:”3%”,<br>    top:”4%”,<br>    containLbel:true<br>  },<br>  xAxis:{<br>    show:true,<br>    type:”category”,<br>    boundaryGap:false,<br>    data:[‘1’,’2’],<br>    axisTick:{<br>      aligbWithLabel:true,<br>      show:true,<br>      length:5,<br>      inside:false,<br>      lineStyle:{<br>        color:””<br>      }<br>    },<br>    splitLine:{<br>      show:false,<br>      lineStyle:{color:””}<br>    },<br>    axisLabel:{<br>      color:””,<br>      fontSize:”12”,<br>      fontWeight:”normal”,<br>      rotate:45<br>    },<br>    axisLine:{<br>      show:true,<br>      lineStyle:{<br>        color:””,<br>        width:1,<br>        type:”solid”<br>      }<br>    },</p>
 <p>  },<br>  yAxis:{<br>    axisTick:{<br>      aligbWithLabel:true,<br>      show:true,<br>      length:5,<br>      inside:false,<br>      lineStyle:{<br>        color:””<br>      }<br>    },<br>    splitLine:{<br>      show:false,<br>      lineStyle:{color:””}<br>    },<br>    axisLabel:{<br>      color:””,<br>      fontSize:”12”,<br>      fontWeight:”normal”,<br>      rotate:45<br>    },<br>    axisLine:{<br>      show:true,<br>      lineStyle:{<br>        color:””,<br>        width:1,<br>        type:”solid”<br>      }<br>    },<br>  },<br>  series:{<br>    {<br>      name:”1”,<br>      type:’line’,<br>      smooth:true,<br>      barWidth:’30%’,<br>      itemStyle:{<br>        barBorderRadius:5,<br>        barCatergoryGap:50<br>      },<br>      lineStyle:{<br>        color:””,<br>        width:2<br>      },<br>      label:{<br>        show:true,<br>        position:”inside”,<br>        formatter:”{c}%”<br>      },<br>      showBackground:true,<br>      backgroundStyle:{<br>        color:””<br>      },<br>      areaStyle:{<br>        color:{<br>          type:’linear&#x2F;radial’,<br>          x:0,y:0,x2:0,y2:1,<br>          colorStops:[<br>            {offset:0,color:’’},<br>            {offset:1,color:’’}<br>          ]<br>        }<br>      },<br>      symbol:’circle’,<br>      symbolSize:6,<br>      itemStyle:{<br>        color:””,<br>        borderColor:””,<br>        borderWidth:2,<br>        showSymbol:false<br>      },<br>    },{<br>      name:’2’,<br>      type:’bar’<br>    }<br>  }<br>}<br>window.addEventListener(‘resize’,function(){myChart.resize()})<br>&#x2F;&#x2F;rose pie<br>series:[<br>  {<br>    name:””,<br>    type:’pie’,<br>    center:[“50%”,”50%”]<br>    radius:[“40%”,”60%”],<br>    roseType:’radius&#x2F;false’,<br>    label:{<br>      fontSize:’12’,<br>      color:””,<br>      formatter:’{b}:{c}({d}%)’<br>    },<br>    labelLine:{<br>      length:10,<br>      length2:15,<br>      smooth:true<br>    },<br>    emphasis:{<br>      label:{show:true}<br>    },<br>    itemStyle:{<br>      borderRadius:4,<br>      borderWidth:2,<br>      borderColor:’’,<br>      showBlur:10,<br>      showColor:’rgba()’<br>    },<br>    data:[<br>      {name:”1”,value:12},{name:”2”,value:22},{name:”3”,value:42}<br>      ]<br>  }<br>]</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://msh-18751628429.github.io">Msh</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://msh-18751628429.github.io/2026/04/08/echartspoints/">https://msh-18751628429.github.io/2026/04/08/echartspoints/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://msh-18751628429.github.io" target="_blank">MShBlog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://s41.ax1x.com/2026/04/14/peDz7ut.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/12/JWT/" title="JWT介绍"><img class="cover" src="/images/cover.jpg" onerror="onerror=null;src='/images/error/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">JWT介绍</div></div><div class="info-2"><div class="info-item-1">JWT (JSON Web Token) 详解📌 什么是JWT？定义JWT（JSON Web Token）是一种开放标准（RFC 7519），用于在网络应用环境间安全地传输信息。它采用JSON对象作为载体，并使用数字签名保证信息不被篡改。 主要特点 紧凑：体积小，可通过URL、POST参数或HTTP头发送 自包含：包含所有必要信息，减少数据库查询 可验证：通过签名确保数据完整性 标准化：遵循RFC标准，跨语言支持  🔐 JWT结构JWT由三部分组成，用点号（.）分隔： 1header.payload.signature  1. Header（头部）1234&#123;  &quot;alg&quot;: &quot;HS256&quot;,  // 签名算法  &quot;typ&quot;: &quot;JWT&quot;     // 令牌类型&#125; Base64Url编码后：eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 2. Payload（载荷）包含声明（claims），分为三类： 注册声明（建议但不强制）123456789&#123...</div></div></div></a><a class="pagination-related" href="/2026/04/07/lanqiao-vue4/" title="lanqiao-vue4"><img class="cover" src="/images/cover.jpg" onerror="onerror=null;src='/images/error/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">lanqiao-vue4</div></div><div class="info-2"><div class="info-item-1">vue题目集。</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://s41.ax1x.com/2026/04/14/peDz7ut.jpg" onerror="this.onerror=null;this.src='/images/error/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Msh</div><div class="author-info-description">这是一个关于编程、技术和生活的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/msh-18751628429"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://msh-18751628429.github" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/min918604@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=2957109601&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/04/12/%E4%B8%80%E4%BA%9B%E7%90%90%E7%A2%8E%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" title="一些琐碎的知识点"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="一些琐碎的知识点"/></a><div class="content"><a class="title" href="/2026/04/12/%E4%B8%80%E4%BA%9B%E7%90%90%E7%A2%8E%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" title="一些琐碎的知识点">一些琐碎的知识点</a><time datetime="2026-04-12T05:14:01.000Z" title="发表于 2026-04-12 13:14:01">2026-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/12/markdown-%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F/" title="markdown 书写格式"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="markdown 书写格式"/></a><div class="content"><a class="title" href="/2026/04/12/markdown-%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F/" title="markdown 书写格式">markdown 书写格式</a><time datetime="2026-04-12T05:04:34.000Z" title="发表于 2026-04-12 13:04:34">2026-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/12/JWT/" title="JWT介绍"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="JWT介绍"/></a><div class="content"><a class="title" href="/2026/04/12/JWT/" title="JWT介绍">JWT介绍</a><time datetime="2026-04-12T02:51:15.000Z" title="发表于 2026-04-12 10:51:15">2026-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/12/%E5%BE%AE%E8%AF%AD/" title="微语"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="微语"/></a><div class="content"><a class="title" href="/2026/04/12/%E5%BE%AE%E8%AF%AD/" title="微语">微语</a><time datetime="2026-04-12T02:51:15.000Z" title="发表于 2026-04-12 10:51:15">2026-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/08/echartspoints/" title="无标题">无标题</a><time datetime="2026-04-08T11:58:10.951Z" title="发表于 2026-04-08 19:58:10">2026-04-08</time></div></div></div></div></div></div></main><footer id="footer" style="background: [object Object];"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Msh</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://msh-18751628429.github.io">Msh</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://msh-18751628429.github.io/2026/04/08/echartspoints/">https://msh-18751628429.github.io/2026/04/08/echartspoints/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://msh-18751628429.github.io" target="_blank">MShBlog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://s41.ax1x.com/2026/04/14/peDz7ut.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/04/12/JWT/" title="JWT介绍"><img class="cover" src="/images/cover.jpg" onerror="onerror=null;src='/images/error/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">JWT介绍</div></div><div class="info-2"><div class="info-item-1">JWT (JSON Web Token) 详解📌 什么是JWT？定义JWT（JSON Web Token）是一种开放标准（RFC 7519），用于在网络应用环境间安全地传输信息。它采用JSON对象作为载体，并使用数字签名保证信息不被篡改。 主要特点 紧凑：体积小，可通过URL、POST参数或HTTP头发送 自包含：包含所有必要信息，减少数据库查询 可验证：通过签名确保数据完整性 标准化：遵循RFC标准，跨语言支持  🔐 JWT结构JWT由三部分组成，用点号（.）分隔： header.payload.signature 1. Header（头部）1234&#123;  &quot;alg&quot;: &quot;HS256&quot;,  // 签名算法  &quot;typ&quot;: &quot;JWT&quot;     // 令牌类型&#125; Base64Url编码后：eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 2. Payload（载荷）包含声明（claims），分为三类： 注册声明（建议但不强制）123456789&#123; ...</div></div></div></a><a class="pagination-related" href="/2026/04/07/lanqiao-vue4/" title="lanqiao-vue4"><img class="cover" src="/images/cover.jpg" onerror="onerror=null;src='/images/error/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">lanqiao-vue4</div></div><div class="info-2"><div class="info-item-1">vue题目集。</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://s41.ax1x.com/2026/04/14/peDz7ut.jpg" onerror="this.onerror=null;this.src='/images/error/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Msh</div><div class="author-info-description">这是一个关于编程、技术和生活的个人博客</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/msh-18751628429"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://msh-18751628429.github" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/min918604@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="/2957109601" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/04/15/%E5%A2%9E%E5%8A%A0waline%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" title="增加waline评论功能"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="增加waline评论功能"/></a><div class="content"><a class="title" href="/2026/04/15/%E5%A2%9E%E5%8A%A0waline%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" title="增加waline评论功能">增加waline评论功能</a><time datetime="2026-04-15T11:26:02.000Z" title="发表于 2026-04-15 19:26:02">2026-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/12/%E4%B8%80%E4%BA%9B%E7%90%90%E7%A2%8E%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" title="一些琐碎的知识点"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="一些琐碎的知识点"/></a><div class="content"><a class="title" href="/2026/04/12/%E4%B8%80%E4%BA%9B%E7%90%90%E7%A2%8E%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" title="一些琐碎的知识点">一些琐碎的知识点</a><time datetime="2026-04-12T05:14:01.000Z" title="发表于 2026-04-12 13:14:01">2026-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/12/JWT/" title="JWT介绍"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="JWT介绍"/></a><div class="content"><a class="title" href="/2026/04/12/JWT/" title="JWT介绍">JWT介绍</a><time datetime="2026-04-12T02:51:15.000Z" title="发表于 2026-04-12 10:51:15">2026-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/12/%E5%BE%AE%E8%AF%AD/" title="微语"><img src="/images/cover.jpg" onerror="this.onerror=null;this.src='/images/error/404.jpg'" alt="微语"/></a><div class="content"><a class="title" href="/2026/04/12/%E5%BE%AE%E8%AF%AD/" title="微语">微语</a><time datetime="2026-04-12T02:51:15.000Z" title="发表于 2026-04-12 10:51:15">2026-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/08/echartspoints/" title="无标题">无标题</a><time datetime="2026-04-08T11:58:10.951Z" title="发表于 2026-04-08 19:58:10">2026-04-08</time></div></div></div></div></div></div></main><footer id="footer" style="background: [object Object];"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Msh</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
   let initFn = window.walineFn || null
   const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
   const option = null
@@ -342,7 +229,7 @@
   const initWaline = (Fn, el = document, path = window.location.pathname) => {
     const waline = Fn({
       el: el.querySelector('#waline-wrap'),
-      serverURL: '',
+      serverURL: 'https://misho.dpdns.org/',
       pageview: false,
       dark: 'html[data-theme="dark"]',
       comment: true,
